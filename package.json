@@ -1,6 +1,6 @@
 {
   "name": "@kerits/kerits-frontend-auth",
-  "version": "0.3.0",
+  "version": "0.3.25",
   "type": "module",
   "scripts": {
     "dev": "vite --port 5174",
@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@kerits/core": "0.3.0",
+    "@kerits/core": "0.3.25",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.12.0"

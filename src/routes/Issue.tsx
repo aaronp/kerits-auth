@@ -1,5 +1,5 @@
 import type { ControllerDSL, DelegateApprovalRequestPayload, DelegationApproveResult } from '@kerits/kerits';
-import { KelIncept, KeriKeyPairs } from '@kerits/kerits';
+import { KelIncept } from '@kerits/kerits';
 import type { DelegationApprovalOffer } from '@kerits/kerits-auth';
 import { KeritsAuth } from '@kerits/kerits-auth';
 import { IndexedDBControllers } from '@kerits/kerits-web';
@@ -104,9 +104,16 @@ function useIssuerController() {
 
 // -- Issuer Setup (first visit) -----------------------------------------------
 
+/** Random numeric seed label for dev issuer setup (BIP39 removed). */
+function randomSeedLabel(): string {
+  const bytes = new Uint8Array(8);
+  crypto.getRandomValues(bytes);
+  return String(new DataView(bytes.buffer).getBigUint64(0));
+}
+
 function IssuerSetup({ onCreated }: { onCreated: (currentMnemonic: string, nextMnemonic: string) => void }) {
-  const [currentMnemonic, setCurrentMnemonic] = useState(() => KeriKeyPairs.randomMnemonic());
-  const [nextMnemonic, setNextMnemonic] = useState(() => KeriKeyPairs.randomMnemonic());
+  const [currentMnemonic, setCurrentMnemonic] = useState(() => randomSeedLabel());
+  const [nextMnemonic, setNextMnemonic] = useState(() => randomSeedLabel());
   const [creating, setCreating] = useState(false);
 
   const handleCreate = async () => {
@@ -126,22 +133,22 @@ function IssuerSetup({ onCreated }: { onCreated: (currentMnemonic: string, nextM
       </div>
 
       <div className="field">
-        <label>Current Key (BIP39 phrase or simple seed)</label>
+        <label>Current Key (numeric seed or arbitrary string)</label>
         <textarea
           value={currentMnemonic}
           onChange={(e) => setCurrentMnemonic(e.target.value)}
           rows={3}
           spellCheck={false}
         />
-        <button type="button" className="link" onClick={() => setCurrentMnemonic(KeriKeyPairs.randomMnemonic())}>
+        <button type="button" className="link" onClick={() => setCurrentMnemonic(randomSeedLabel())}>
           regenerate
         </button>
       </div>
 
       <div className="field">
-        <label>Next Key (BIP39 phrase or simple seed)</label>
+        <label>Next Key (numeric seed or arbitrary string)</label>
         <textarea value={nextMnemonic} onChange={(e) => setNextMnemonic(e.target.value)} rows={3} spellCheck={false} />
-        <button type="button" className="link" onClick={() => setNextMnemonic(KeriKeyPairs.randomMnemonic())}>
+        <button type="button" className="link" onClick={() => setNextMnemonic(randomSeedLabel())}>
           regenerate
         </button>
       </div>

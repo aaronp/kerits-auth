@@ -46,4 +46,4 @@ This is a template — fork it and adapt:
 
 ## Dependencies
 
-This project uses packages from the [`@kerits` npm registry](https://www.npmjs.com/org/kerits). The `.npmrc` file configures this automatically.
+This project uses packages from the [`@kerits.id` npm registry](https://www.npmjs.com/org/kerits.id). The `.npmrc` file configures this automatically.

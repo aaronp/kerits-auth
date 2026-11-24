@@ -1,4 +1,4 @@
-import { Controllers } from '@kerits/kerits';
+import { Controllers } from '@kerits.id/kerits';
 import {
   type AuthRequest,
   createAuthRequest,
@@ -11,7 +11,7 @@ import {
   WalletNoAccountError,
   WalletProtocolError,
   WalletTimeoutError,
-} from '@kerits/kerits-auth';
+} from '@kerits.id/kerits-auth';
 import { useState } from 'react';
 import { CodePreview } from '../components/CodePreview';
 import { ProofChecksPanel } from '../components/ProofChecksPanel';

@@ -1,8 +1,8 @@
-import type { ControllerDSL, DelegateApprovalRequestPayload, DelegationApproveResult } from '@kerits/kerits';
-import { KelIncept } from '@kerits/kerits';
-import type { DelegationApprovalOffer } from '@kerits/kerits-auth';
-import { KeritsAuth } from '@kerits/kerits-auth';
-import { IndexedDBControllers } from '@kerits/kerits-web';
+import type { ControllerDSL, DelegateApprovalRequestPayload, DelegationApproveResult } from '@kerits.id/kerits';
+import { KelIncept } from '@kerits.id/kerits';
+import type { DelegationApprovalOffer } from '@kerits.id/kerits-auth';
+import { KeritsAuth } from '@kerits.id/kerits-auth';
+import { IndexedDBControllers } from '@kerits.id/kerits-web';
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getStoredWalletUrl, WalletUrlField } from '../components/WalletUrlField';

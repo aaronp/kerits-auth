@@ -1,5 +1,5 @@
-import type { DelegateApprovalRequestPayload } from '@kerits/kerits';
-import type { ProofAttempt, ProofResult, Requirement, SignedPresentation } from '@kerits/kerits-auth';
+import type { DelegateApprovalRequestPayload } from '@kerits.id/kerits';
+import type { ProofAttempt, ProofResult, Requirement, SignedPresentation } from '@kerits.id/kerits-auth';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 

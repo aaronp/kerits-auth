@@ -1,4 +1,4 @@
-import { KeritsAuth, type Requirement } from '@kerits/kerits-auth';
+import { KeritsAuth, type Requirement } from '@kerits.id/kerits-auth';
 import type { ReactNode } from 'react';
 import { useRef } from 'react';
 

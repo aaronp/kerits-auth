@@ -53,7 +53,7 @@ function generateCode(entries: RequirementEntry[], walletUrl: string): string {
     return `  KeritsAuth.requires.hasCredential({\n    schema: '${e.schema}',\n    issuers: [${issuersStr}],\n  })`;
   });
 
-  return `import { ${imports.join(', ')} } from '@kerits/kerits-auth';
+  return `import { ${imports.join(', ')} } from '@kerits.id/kerits-auth';
 
 const request = createAuthRequest({
   audience: '${config.audience}',
